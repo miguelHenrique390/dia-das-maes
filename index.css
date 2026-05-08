@@ -1,0 +1,163 @@
+:root {
+    --purple-deep: #2d005d;
+    --purple-vibrant: #6a0dad;
+    --purple-soft: #e0b0ff;
+    --canvas-white: #fcfaf7;
+    --shadow-art: rgba(45, 0, 93, 0.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9859fd;
+    /* Textura de papel/tela */
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    font-family: 'Poppins', sans-serif;
+    color: var(--purple-deep);
+    overflow-x: hidden;
+}
+
+/* Manchas de tinta abstratas no fundo */
+.spot {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    opacity: 0.4;
+}
+.spot-1 { width: 300px; height: 300px; background: var(--purple-soft); top: -50px; left: -50px; }
+.spot-2 { width: 400px; height: 400px; background: #d1c4e9; bottom: -100px; right: -100px; }
+
+.main-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+.exhibition-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--purple-vibrant);
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    font-weight: 500;
+    min-height: 80px;
+    transition: all 0.6s ease;
+}
+
+/* A Moldura do Quadro - Versão sem inclinação */
+.canvas-area {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.4s ease; /* Mantém a transição suave */
+}
+
+.canvas-area:hover {
+    /* Removemos o rotate(-1deg) e deixamos apenas o leve zoom */
+    transform: scale(1.02); 
+}
+
+.art-frame {
+    background: white;
+    padding: 20px; /* O 'Passe-partout' da galeria */
+    box-shadow: 
+        10px 10px 0px var(--purple-soft), /* Detalhe moderno */
+        0 20px 40px var(--shadow-art);
+    border: 1px solid #ddd;
+    line-height: 0;
+}
+
+img {
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    filter: sepia(0.1) contrast(1.05); /* Toque artístico sutil */
+    transition: opacity 0.5s ease;
+}
+
+/* Decoração embaixo da foto que lembra pincelada */
+.brush-stroke {
+    height: 6px;
+    width: 60%;
+    background: var(--purple-vibrant);
+    margin: 25px auto 0;
+    border-radius: 50% 20% 40% 10%;
+    opacity: 0.6;
+}
+
+.instrucao {
+    margin-top: 30px;
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Efeito de troca de obra */
+.fade-out {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    h1 { font-size: 1.4rem; }
+    .art-frame { padding: 12px; }
+}
+
+/* --- ESTILO DO BOTÃO --- */
+button {
+    background-color: var(--purple-bright); /* O roxo mais claro que definimos */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    padding: 15px 30px;
+    margin: 30px 0;
+    
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px; /* Deixa o botão arredondado e moderno */
+    
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para cores e sombras */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: white;
+    color: var(--purple-main);
+    transform: translateY(-3px); /* Efeito de levante ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(157, 80, 187, 0.4); /* Brilho roxo no hover */
+}
+
+button:active {
+    transform: translateY(1px); /* Efeito de clique físico */
+}
+
+/* Ajuste para o botão não ficar colado no quadrado branco no mobile */
+@media (max-width: 500px) {
+    button {
+        width: 100%; /* Botão ocupa a largura toda no celular */
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
