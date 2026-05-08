@@ -23,7 +23,46 @@ let ultimoIndice = listaFrases.length - 1
 frase.textContent = listaFrases[0]
 imagem.src = listaImagens[0]
 
+
+let myAudio = new Audio('musicas/musica_1.mp3');
+
 function proximaFoto() {
+
+
+    if(indiceAtual == 0){
+        myAudio.pause();
+        myAudio = new Audio('musicas/musica_1.mp3');
+        myAudio.play();
+    }
+
+    if(indiceAtual == 1){
+        myAudio.pause();
+        myAudio = new Audio('musicas/musica_2.mp3');
+        myAudio.play();
+        
+    }
+
+    if(indiceAtual == 2){
+        myAudio.pause();
+        myAudio = new Audio('musicas/musica_3.mp3');
+        myAudio.play();
+    }
+
+    if(indiceAtual == 3){
+        myAudio.pause();
+        myAudio = new Audio('musicas/musica_4.mp3');
+        myAudio.play();
+    }
+
+    if(indiceAtual == 4){
+        myAudio.pause();
+        myAudio = new Audio('musicas/musica_5.mp3');
+        myAudio.play();
+    }
+    
+
+    
+    
 
     if(indiceAtual < ultimoIndice){
         //pode ir para proximo
